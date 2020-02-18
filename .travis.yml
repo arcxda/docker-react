@@ -1,10 +1,11 @@
+lenguage: node_js
 sudo: required
 services:
-- docker
+ - docker
 
 
 before_install: gem install bundler --pre
-- docker build -t arcxda/docker-react -f Dockerfile.dev .
+ - docker build -t arcxda/docker-react -f Dockerfile.dev .
 
 script:
-- docker run arcxda/docker-react npm run test -- --coverage
+ - docker run arcxda/docker-react npm run test -- --coverage
